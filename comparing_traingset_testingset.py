@@ -1,0 +1,11 @@
+def comparing_train_and_test_feature(df,df_test,col):
+    fig = plt.figure(figsize=(16,10))
+    ax0 = fig.add_subplot(1,2,1)
+    ax1 = fig.add_subplot(1,2,2)
+    df[col].plot(kind='kde',ax=ax0)
+    df_test[col].plot(kind='kde',ax=ax1)
+    ax0.set_xlabel(col)
+    ax1.set_xlabel(col)
+    ax0.set_title("Density plot of " + str(col) + " of training set")
+    ax1.set_title("Density plot of " + str(col) + " of testing set")
+    plt.show()
